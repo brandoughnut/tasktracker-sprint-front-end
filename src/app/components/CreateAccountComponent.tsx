@@ -2,7 +2,9 @@ import React from 'react'
 
 const CreateAccountComponent = () => {
   return (
-    <div>CreateAccountComponent</div>
+    <div className=' bg-dark-teal flex flex-col'>
+      
+    </div>
   )
 }
 
