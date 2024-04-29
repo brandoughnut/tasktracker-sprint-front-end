@@ -4,7 +4,7 @@ import React from 'react'
 import navbarlogo from '@/assets/navbarexclamation.png';
 import Image from 'next/image';
 
-const NavBarComponent = () => {
+const NavBarComponent = (prop: {isProfileIcon: boolean}) => {
   return (
     <div className='h-[135px] w-full bg-gradient-to-r from-[#AEE6D9] to-[#3EBE9F]'>
       <div className='h-full flex mx-[36px] justify-between'>
@@ -15,7 +15,7 @@ const NavBarComponent = () => {
           </div>
         <Image className='h-[96.94px] mt-3.5' src={navbarlogo} alt='exclamation mark'/>
         </div>
-        <div className='my-auto h-[66px] w-[67px] rounded-full border-black border-[1px] bg-white'>
+        <div className={prop.isProfileIcon ? 'my-auto h-[66px] w-[67px] rounded-full border-black border-[1px] bg-white' : 'hidden'}>
 
       </div>
       </div>

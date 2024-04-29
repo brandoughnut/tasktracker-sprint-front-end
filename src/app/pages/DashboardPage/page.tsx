@@ -12,7 +12,7 @@ const DashboardPage = () => {
 
   return (
     <div>
-      <NavBarComponent/>
+      <NavBarComponent isProfileIcon={true}/>
       <MyBoardsComponent/>
     </div>
   )
