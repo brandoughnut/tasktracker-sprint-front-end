@@ -6,9 +6,9 @@ import React from 'react'
 
 const LoginPage = () => {
   return (
-    <div>
+    <div className=' bg-very-light-teal h-[100vh]'>
       <NavBarComponent/>
-      <div>
+      <div className=' pt-[107px] flex justify-center h-full'>
         <CreateAccountComponent/>
       </div>
     </div>
