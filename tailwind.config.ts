@@ -33,6 +33,9 @@ const config: Config = {
         'basically-black' :'#171717',
         'blue' : '#3177FF',
       },
+      fontFamily: {
+        'HoltwoodOneSC' : 'HoltwoodOneSC',
+      }
     },
   },
   plugins: [],
