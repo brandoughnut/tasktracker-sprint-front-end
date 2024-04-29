@@ -7,6 +7,15 @@
   src: url(../fonts/Holtwood_One_SC/HoltwoodOneSC-Regular.ttf);
 }
 
+@font-face {
+  font-family: HammersmithOne;
+  src: url(../fonts/Hammersmith_One/HammersmithOne-Regular.ttf);
+}
+
 .HoltwoodOneSC {
   font-family: HoltwoodOneSC;
+}
+
+.HammersmithOne {
+  font-family: HammersmithOne;
 }
