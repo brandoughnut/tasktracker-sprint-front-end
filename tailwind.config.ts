@@ -35,6 +35,7 @@ const config: Config = {
       },
       fontFamily: {
         'HoltwoodOneSC' : 'HoltwoodOneSC',
+        'HammersmithOne':'HammersmithOne',
       }
     },
   },
