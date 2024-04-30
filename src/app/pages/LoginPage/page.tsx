@@ -14,7 +14,7 @@ const LoginPage = () => {
   },[])
   return (
     <div className=' '>
-      <NavBarComponent/>
+      <NavBarComponent isProfileIcon={false}/>
       <div className=' pt-[107px] flex justify-center h-full'>
         {
           haveAccount
