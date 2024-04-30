@@ -1,38 +1,58 @@
 //Local Storage Functions
 
 //Favorites
-export const saveToLocalStorage = (city : string, country : string) => {
+export const saveUsernameToLocalStorage = (username : string) => {
 
-    let favorites = getlocalStorage();
-    let location = city + ", " + country;
-    if (!favorites.includes(location)) {
-        favorites.push(location);
-    }
-
-    localStorage.setItem("Weather Favorites", JSON.stringify(favorites));
+    localStorage.setItem("Username", JSON.stringify(username));
 }
 
-export const getlocalStorage= ():string[]  => {
+export const getUsernameFromLocalStorage= ():string  => {
 
-    let localStorageData = localStorage.getItem("Weather Favorites");
+    let localStorageData = localStorage.getItem("Username");
 
-    if (localStorageData == null) {
-        return [];
+    if (localStorageData == undefined) {
+        return 'Guest';
     }
 
     return JSON.parse(localStorageData);
 
 }
 
-export const removeFromLocalStorage = (city : string, country : string) => {
+// //Local Storage Functions
 
-    let favorites = getlocalStorage();
-    let location = city + ", " + country;
+// //Favorites
+// export const saveToLocalStorage = (city : string, country : string) => {
 
-    let namedIndex = favorites.indexOf(location);
+//     let favorites = getlocalStorage();
+//     let location = city + ", " + country;
+//     if (!favorites.includes(location)) {
+//         favorites.push(location);
+//     }
 
-    favorites.splice(namedIndex, 1);
+//     localStorage.setItem("Weather Favorites", JSON.stringify(favorites));
+// }
 
-    localStorage.setItem("Weather Favorites", JSON.stringify(favorites))
+// export const getlocalStorage= ():string[]  => {
 
-}
+//     let localStorageData = localStorage.getItem("Weather Favorites");
+
+//     if (localStorageData == null) {
+//         return [];
+//     }
+
+//     return JSON.parse(localStorageData);
+
+// }
+
+// export const removeFromLocalStorage = (city : string, country : string) => {
+
+//     let favorites = getlocalStorage();
+//     let location = city + ", " + country;
+
+//     let namedIndex = favorites.indexOf(location);
+
+//     favorites.splice(namedIndex, 1);
+
+//     localStorage.setItem("Weather Favorites", JSON.stringify(favorites))
+
+// }
