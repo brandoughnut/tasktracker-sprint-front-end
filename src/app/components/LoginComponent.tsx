@@ -1,6 +1,10 @@
 import React from 'react'
 
-const LoginComponent = () => {
+interface ILoginComponent {
+  setHaveAccount : (setAccount: boolean) => void
+}
+
+const LoginComponent = (prop:ILoginComponent) => {
   return (
     <div className=' bg-dark-teal flex flex-col items-center w-[730px] h-[637px] py-[51px] px-[25px]'>
       <div className=' font-HoltwoodOneSC text-5xl mb-12'>Login</div>
@@ -16,7 +20,7 @@ const LoginComponent = () => {
       </div>
       <div className=' w-full flex flex-col items-center mt-10'>
           <button className=' bg-darker-teal text-white font-HammersmithOne text-[28px] w-[170px] h-[64px] rounded-[10px]'>Login</button>
-          <div className=' font-HammersmithOne mt-4'>Don't have an account? <span className=' cursor-pointer underline'>Create one now!</span></div>
+          <div className=' font-HammersmithOne mt-4'>Don't have an account? <span onClick={()=>prop.setHaveAccount(false)} className=' cursor-pointer underline'>Create one now!</span></div>
         </div>
     </div>
   )
