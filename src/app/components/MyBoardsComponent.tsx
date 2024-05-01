@@ -12,6 +12,8 @@ interface IMyBoardComponent {
     setIsAddBoard : (isBoardAdded:boolean) => void
 }
 
+const boards = ["Board 1", "Chores", "Board 3", "Board 4"];
+
 const MyBoardsComponent = (props: IMyBoardComponent) => {
 
     const [isTag1, setIsTag1] = useState<boolean>(false);
@@ -61,14 +63,13 @@ const MyBoardsComponent = (props: IMyBoardComponent) => {
             <Image onClick={() => props.setIsAddBoard(true)} className='h-[35px] w-[35px] mt-[23px] ms-6 cursor-pointer' src={plus} alt='plus icon'/>
         </div>
         <div className='mx-[63px] rounded-[5px] overflow-y-auto h-[74.5vh]'>
-            <BoardCardComponent projectName='YOUR BOARD'/>
-            <BoardCardComponent projectName='YOUR BOARD'/>
-            <BoardCardComponent projectName='YOUR BOARD'/>
-            <BoardCardComponent projectName='YOUR BOARD'/>
-            <BoardCardComponent projectName='YOUR BOARD'/>
-            <BoardCardComponent projectName='YOUR BOARD'/>
-            <BoardCardComponent projectName='YOUR BOARD'/>
-            <BoardCardComponent projectName='YOUR BOARD'/>
+            {
+                boards.map((board, idx)=>{
+                    return(
+                        <BoardCardComponent key={idx} projectName={board} colorID={idx%3}/>
+                    )
+                })
+            }
         </div>
     </div>
     </div>
