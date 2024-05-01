@@ -14,12 +14,32 @@ const AddBoardComponent = (props: IAddBoardComponent) => {
     const [boardCode, setBoardCode] = useState<string>('');
     const [nameBoard, setNameBoard] = useState<string>('');
 
-    const handleClickJoin = () => {
+    const joinBoard = () => {
+        props.setIsAddBoard(false)
+    }
 
+    const createBoard = () => {
+        props.setIsAddBoard(false)
+    }
+
+    const handleClickJoin = () => {
+        if(boardCode.length == 0){
+            setWarning('Please Enter a Board Code')
+        }else if(boardCode.length < 6){
+            setWarning('Board Code must contain 6 characters')
+        }else{
+            joinBoard();
+            setWarning('')
+        }
     }
 
     const handleClickCreate = () => {
-
+        if(nameBoard.length == 0){
+            setWarning('Please Enter a Name for your Board')
+        }else{
+            createBoard();
+            setWarning('')
+        }
     }
 
     const handleClickClose = () => {
@@ -30,6 +50,9 @@ const AddBoardComponent = (props: IAddBoardComponent) => {
         let code = e.target.value;
         if(code.length < 7){
             setBoardCode(code);
+        }
+        if(code.length == 6){
+            setWarning('')
         }
     }
 
