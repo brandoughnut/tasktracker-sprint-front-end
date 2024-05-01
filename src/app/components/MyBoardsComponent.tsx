@@ -8,7 +8,11 @@ import tag from '@/assets/HoverTag.png';
 import Image from 'next/image';
 import BoardCardComponent from './BoardCardComponent';
 
-const MyBoardsComponent = () => {
+interface IMyBoardComponent {
+    setIsAddBoard : (isBoardAdded:boolean) => void
+}
+
+const MyBoardsComponent = (props: IMyBoardComponent) => {
 
     const [isTag1, setIsTag1] = useState<boolean>(false);
     const [isTag2, setIsTag2] = useState<boolean>(false);
@@ -54,7 +58,7 @@ const MyBoardsComponent = () => {
         <div className='bg-white border-[1px] border-black rounded-[5px] h-[789px] w-[800px]'>
         <div className='flex justify-center mt-[41px]'>
             <h1 className='HammersmithOne text-[60px] h-[75px]'>MY BOARDS</h1>
-            <Image className='h-[35px] w-[35px] mt-[23px] ms-6 cursor-pointer' src={plus} alt='plus icon'/>
+            <Image onClick={() => props.setIsAddBoard(true)} className='h-[35px] w-[35px] mt-[23px] ms-6 cursor-pointer' src={plus} alt='plus icon'/>
         </div>
         <div className='mx-[63px] rounded-[5px] overflow-y-auto h-[74.5vh]'>
             <BoardCardComponent projectName='YOUR BOARD'/>
