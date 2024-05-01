@@ -2,11 +2,19 @@
 
 import Image from "next/image";
 import NavBarComponent from '@/app/components/NavBarComponent'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import plus from '@/assets/tasksprintplus.png';
 import TaskTypeComponent from "@/app/components/TaskTypeComponent";
+import ViewTaskComponent from "@/app/components/ViewTaskComponent";
 
 const TaskPage = () => {
+
+    const [isViewTask, setIsViewTask] = useState<boolean>(false);
+
+    useEffect(() => {
+        document.body.style.backgroundColor = '#F1FFFC'
+      }, [])
+
   return (
     <div>
       <NavBarComponent isProfileIcon={true}/>
@@ -66,9 +74,13 @@ const TaskPage = () => {
         </div>
     </div>
 
+    {
+        isViewTask && <div className='absolute inset-0 bg-gray-200 bg-opacity-50 backdrop-filter backdrop-blur-[2px] flex justify-center items-center z-50'>
+        <ViewTaskComponent setIsViewTask={setIsViewTask}/>
+        </div>
+    }  
 
-
-
+    
 
     </div>
   )

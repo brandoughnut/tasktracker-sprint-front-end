@@ -2,9 +2,13 @@
 
 import React from 'react'
 
-const TaskCardComponent = () => {
+const TaskCardComponent = (prop: {setIsViewTask : (isViewTask:boolean) => void}) => {
   return (
-    <div className='w-[269px] h-[168px] bg-white rounded-[10px] cursor-pointer'>
+    <div
+    onClick={() => {
+      prop.setIsViewTask(true);
+    }}
+    className='w-[269px] h-[168px] bg-white rounded-[10px] cursor-pointer'>
         <h1 className='HammersmithOne text-[24px] truncate ps-[20px] pe-[41px] pt-[9px]'>Test Create Account</h1>
         <p className='HammersmithOne text-[16px] px-[20px] mt-[10px] line-clamp-2'>A short description of the task you are viewing. When login</p>
         <div className='flex justify-between mx-[20px]'>

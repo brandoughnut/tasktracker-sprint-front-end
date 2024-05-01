@@ -2,7 +2,7 @@
 
 import React from 'react'
 
-const ViewTaskComponent = () => {
+const ViewTaskComponent = (prop: {setIsViewTask : (isViewTask:boolean) => void}) => {
   return (
     <div>
         <div className='w-[1033px] h-[673px] rounded-[10px] border-black border-[1px] z-50'>

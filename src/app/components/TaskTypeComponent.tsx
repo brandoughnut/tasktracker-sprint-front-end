@@ -1,11 +1,14 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import plus from '@/assets/tasksprintplus.png';
 import Image from "next/image";
 import TaskCardComponent from './TaskCardComponent';
 
 const TaskTypeComponent = (prop: {color:string, type:string, isShown:boolean}) => {
+
+    const [isViewTask, setIsViewTask] = useState<boolean>(false);
+
   return (
     <div className={`h-[252px] w-full ${prop.color} rounded-[5px]`}>
         <div className='flex ms-[20px]'>
@@ -14,25 +17,25 @@ const TaskTypeComponent = (prop: {color:string, type:string, isShown:boolean}) =
         </div>
         <div className='ms-[10px] lg:ms-[51px] flex overflow-x-auto mt-[10px]'>
             <div className='me-[35px]'>
-                <TaskCardComponent/>
+                <TaskCardComponent setIsViewTask={setIsViewTask}/>
             </div>
             <div className='me-[35px]'>
-                <TaskCardComponent/>
+                <TaskCardComponent setIsViewTask={setIsViewTask}/>
             </div>
             <div className='me-[35px]'>
-                <TaskCardComponent/>
+                <TaskCardComponent setIsViewTask={setIsViewTask}/>
             </div>
             <div className='me-[35px]'>
-                <TaskCardComponent/>
+                <TaskCardComponent setIsViewTask={setIsViewTask}/>
             </div>
             <div className='me-[35px]'>
-                <TaskCardComponent/>
+                <TaskCardComponent setIsViewTask={setIsViewTask}/>
             </div>
             <div className='me-[35px]'>
-                <TaskCardComponent/>
+                <TaskCardComponent setIsViewTask={setIsViewTask}/>
             </div>
             <div className='me-[35px]'>
-                <TaskCardComponent/>
+                <TaskCardComponent setIsViewTask={setIsViewTask}/>
             </div>
 
         </div>
