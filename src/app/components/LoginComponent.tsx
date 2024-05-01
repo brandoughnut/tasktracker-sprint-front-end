@@ -70,7 +70,7 @@ const LoginComponent = (prop: ILoginComponent) => {
       </div>
       <div className=' w-full flex flex-col items-center mt-10'>
         <button onClick={handleCreate} className=' bg-darker-teal text-white font-HammersmithOne text-[28px] w-[170px] h-[64px] rounded-[10px]'>Login</button>
-        <div className=' font-HammersmithOne mt-4'>Don't have an account? <span onClick={() => prop.setHaveAccount(false)} className=' cursor-pointer underline'>Create one now!</span></div>
+        <div className=' font-HammersmithOne mt-4'>{"Don't have an account?"} <span onClick={() => prop.setHaveAccount(false)} className=' cursor-pointer underline'>Create one now!</span></div>
         <div>
           <div className=' font-HammersmithOne text-red'>{message}</div>
         </div>
