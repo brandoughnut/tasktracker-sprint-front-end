@@ -1,0 +1,98 @@
+{
+    "userID": 1,
+    "username": "USERNAME",
+    "joinDate": "12/31/1937",
+    "userColor": "#57CDFF",
+    "boards": [
+        {
+            "name": "OUR BOARD",
+            "code": "XYZ456",
+            "members": [
+                {
+                    "name": "blue",
+                    "color": "#57CDFF"
+                },
+                {
+                    "name": "red",
+                    "color": "#FF6E6E"
+                },
+                {
+                    "name": "magenta",
+                    "color": "#D59FFF"
+                }
+            ]
+        },
+        {
+            "name": "CHORES",
+            "code": "ABC123",
+            "members": [
+                {
+                    "name": "yellow",
+                    "color": "#D3FF57"
+                },
+                {
+                    "name": "orange",
+                    "color": "#FFC56E"
+                },
+                {
+                    "name": "blue",
+                    "color": "#57CDFF"
+                }
+            ]
+        },
+        {
+            "name": "BOARD #3",
+            "code": "DEF456",
+            "members": [
+                {
+                    "name": "magenta",
+                    "color": "#D59FFF"
+                },
+                {
+                    "name": "blue",
+                    "color": "#57CDFF"
+                },
+                {
+                    "name": "indigo",
+                    "color": "#513DCC"
+                }
+            ]
+        },
+        {
+            "name": "OUR BOARD",
+            "code": "XYZ456",
+            "members": [
+                {
+                    "name": "blue",
+                    "color": "#57CDFF"
+                },
+                {
+                    "name": "red",
+                    "color": "#FF6E6E"
+                },
+                {
+                    "name": "magenta",
+                    "color": "#D59FFF"
+                }
+            ]
+        },
+        {
+            "name": "CHORES",
+            "code": "ABC123",
+            "members": [
+                {
+                    "name": "yellow",
+                    "color": "#D3FF57"
+                },
+                {
+                    "name": "orange",
+                    "color": "#FFC56E"
+                },
+                {
+                    "name": "blue",
+                    "color": "#57CDFF"
+                }
+            ]
+        }
+    ]
+}

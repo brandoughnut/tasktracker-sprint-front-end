@@ -7,14 +7,18 @@ import paintbrush from '@/assets/editpaintbrush.png';
 import tag from '@/assets/HoverTag.png';
 import Image from 'next/image';
 import BoardCardComponent from './BoardCardComponent';
+import { IUserData } from '@/interfaces/interfaces';
+import { getExampleData } from '@/services/DataServices';
 
 interface IMyBoardComponent {
     setIsAddBoard: (isBoardAdded: boolean) => void
 }
 
-const boards = ["Our Board", "Chores", "Board 3", "Board 4"];
+const boards = ["OUR BOARD", "CHORES", "BOARD #3", "OUR BOARD", "CHORES"];
 
 const MyBoardsComponent = (props: IMyBoardComponent) => {
+
+    const [userData, setUserData] = useState<IUserData>(getExampleData())
 
     const [isTag1, setIsTag1] = useState<boolean>(false);
     const [isTag2, setIsTag2] = useState<boolean>(false);
@@ -22,7 +26,7 @@ const MyBoardsComponent = (props: IMyBoardComponent) => {
     return (
         <div className='flex justify-between ms-[144px] me-[47px]'>
             <div className='mt-[91px]'>
-                <div className='mx-auto text-center h-[315px] w-[310px] rounded-full bg-blue border-black border-[1px]'></div>
+                <div className='mx-auto text-center h-[315px] w-[310px] rounded-full border-black border-[1px]' style={{background: userData.userColor}}></div>
                 <div className='flex justify-between -mt-12'>
                     <div>
                         <Image onMouseEnter={() => { setIsTag1(true) }} onMouseLeave={() => { setIsTag1(false) }} className='h-[45px] w-[45px]' src={paintbrush} alt='paintbrush' />
@@ -53,8 +57,8 @@ const MyBoardsComponent = (props: IMyBoardComponent) => {
                     <h1 className='HammersmithOne text-[20px] w-full absolute top-[48.5%] text-center text-white'>Profile Picture</h1>
                 </div>
             </div> */}
-                <h1 className='HammersmithOne text-center text-[64px]'>USERNAME</h1>
-                <h1 className='HammersmithOne text-center text-[40px]'>Joined 12/31/1937</h1>
+                <h1 className='HammersmithOne text-center text-[64px]'>{userData.username}</h1>
+                <h1 className='HammersmithOne text-center text-[40px]'>Joined {userData.joinDate}</h1>
             </div>
             <div className='mt-[53px]'>
                 <div className='bg-white border-[1px] border-black rounded-[5px] h-[789px] w-[800px] overflow-auto'>
@@ -64,9 +68,9 @@ const MyBoardsComponent = (props: IMyBoardComponent) => {
                     </div>
                     <div className='mx-[63px] rounded-[5px] h-auto'>
                         {
-                            boards.map((board, idx) => {
+                            userData.boards.map((board, idx) => {
                                 return (
-                                    <BoardCardComponent key={idx} projectName={board} colorID={idx % 3} />
+                                    <BoardCardComponent key={idx} projectName={board.name} colorID={idx % 3} members={board.members} />
                                 )
                             })
                         }
