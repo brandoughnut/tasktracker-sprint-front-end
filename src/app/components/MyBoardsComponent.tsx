@@ -12,7 +12,7 @@ interface IMyBoardComponent {
     setIsAddBoard: (isBoardAdded: boolean) => void
 }
 
-const boards = ["Our Board", "Chores", "Board 3", "Board 4"];
+const boards = ["OUR BOARD", "CHORES", "BOARD #3", "OUR BOARD", "CHORES"];
 
 const MyBoardsComponent = (props: IMyBoardComponent) => {
 
