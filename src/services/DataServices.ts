@@ -1,8 +1,9 @@
 import { IMember, IBoard, IUserInfo, IToken, IUserData } from "@/interfaces/interfaces";
 import UserExampleData from '@/data/UserDataExample.json'
+import BoardDataExample from '@/data/BoardDataExample.json'
 
 
-const url = "https://task-tracker-backend.azurewebsites.net";
+const url = "https://aymotasktracker.azurewebsites.net";
 
 let userData: IUserData
 
@@ -57,6 +58,10 @@ export const getLoggedInUserData = async (username: string) => {
 
 export const getExampleData = () => {
     return UserExampleData;
+}
+
+export const getExampleBoardData = () => {
+    return BoardDataExample;
 }
 
 
