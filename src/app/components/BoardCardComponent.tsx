@@ -1,13 +1,19 @@
 'use client'
 
+import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
 
 
 
 const BoardCardComponent = (props: { projectName: string; colorID: number; members: { name: string; color: string }[] }) => {
 
+  const router = useRouter();
+
   const [className, setClassName] = useState<string>('cursor-pointer HammersmithOne text-[40px] w-full h-[117px] flex justify-between mt-[40px] mb-[60px]')
 
+  const handleClick = () => {
+    router.push('/pages/TaskPage')
+  }
 
   useEffect(() => {
     switch (props.colorID) {
@@ -24,7 +30,7 @@ const BoardCardComponent = (props: { projectName: string; colorID: number; membe
   }, [props.colorID]);
 
   return (
-    <div className={className}>
+    <div onClick={handleClick} className={className}>
       <div className='my-auto ms-[34px]'><h1>{props.projectName}</h1></div>
       <div className=' flex me-[38px] '>
         {
