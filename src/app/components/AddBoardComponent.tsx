@@ -58,7 +58,7 @@ const AddBoardComponent = (props: IAddBoardComponent) => {
 
 
   return (
-    <div className=' bg-white border p-[50px] w-[1033px] h-[500px] rounded-md flex flex-row relative'>
+    <div className=' bg-white border p-[50px] w-full lg:w-[1033px] h-[500px] rounded-md flex flex-row relative'>
         <Image onClick={handleClickClose} className=' absolute top-7 right-8 cursor-pointer' src={X} alt='X'/>
         <div className=' absolute bottom-5 right-0 left-0 text-center text-red'>{warning}</div>
         <div className=' flex flex-col items-center justify-center space-y-5 w-full mr-[50px]'>

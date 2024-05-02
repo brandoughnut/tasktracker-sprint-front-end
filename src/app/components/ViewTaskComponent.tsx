@@ -7,7 +7,7 @@ import Image from "next/image";
 const ViewTaskComponent = (prop: {setIsViewTask : (isViewTask:boolean) => void}) => {
   return (
     <div>
-        <div className='w-[1033px] h-[673px] rounded-[10px] border-black border-[1px] z-50 bg-white overflow-y-auto'>
+        <div className='w-full lg:w-[1033px] h-[673px] rounded-[10px] border-black border-[1px] z-50 bg-white overflow-y-auto'>
             <div className='flex justify-between ms-[57px] me-[40px] mt-10'>
                 <h1 className='text-[48px] HammersmithOne'>Test Login</h1>
                 <Image 
@@ -29,7 +29,7 @@ const ViewTaskComponent = (prop: {setIsViewTask : (isViewTask:boolean) => void})
                     <h1 className=''>Assignee:</h1>
                     <h1 className='text-[#5E5E5E] leading-none'>username</h1>
                   </div>
-                  <div className='bg-blue rounded-full border-black border-[1px] w-[50px] h-[49.25px]'></div>
+                  <div className='cursor-pointer bg-blue rounded-full border-black border-[1px] w-[50px] h-[49.25px]'></div>
                 </div>
                 <div className='mt-6'>
                   <h1 className='HammersmithOne text-[20px]'>Created 12/31/1936</h1>

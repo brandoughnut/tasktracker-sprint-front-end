@@ -41,7 +41,7 @@ const AddTaskComponent = (prop : {setIsCreateTask : (isCreateTask:boolean) => vo
                     <h1 className=''>Assignee:</h1>
                     <h1 className='text-[#5E5E5E] leading-none'>username</h1>
                   </div>
-                  <div className='bg-blue rounded-full border-black border-[1px] w-[50px] h-[49.25px]'></div>
+                  <div className='cursor-pointer bg-blue rounded-full border-black border-[1px] w-[50px] h-[49.25px]'></div>
                 </div>
                 <div className='mt-6'>
                   <h1 className='HammersmithOne text-[20px]'>Created 12/31/1936</h1>

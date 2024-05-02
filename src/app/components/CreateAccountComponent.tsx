@@ -71,20 +71,20 @@ const CreateAccountComponent = (prop: ICreateAccountComponent) => {
 
   return (
     <div className=' bg-dark-teal flex flex-col items-center w-[730px] h-[100%] py-[51px] px-[25px]'>
-      <div className=' font-HoltwoodOneSC text-5xl mb-12'>Create Account</div>
+      <div className=' font-HoltwoodOneSC text-5xl mb-12 text-center'>Create Account</div>
       <div className=' space-y-6'>
-        <div className=' w-[595px] flex flex-col space-y-1'>
+        <div className='w-full lg:w-[595px] flex flex-col space-y-1'>
           <div className=' font-HammersmithOne text-2xl ps-2'>Username</div>
           <input onChange={(e) => setUsername(e.target.value)} className=' h-14 rounded-[10px] font-HammersmithOne text-2xl px-5' type="text" />
         </div>
-        <div className=' w-[595px] flex flex-col space-y-1'>
+        <div className=' w-full lg:w-[595px] flex flex-col space-y-1'>
           <div className=' font-HammersmithOne text-2xl ps-2'>Password</div>
           <div className=' relative'>
             <input onChange={(e) => setPassword(e.target.value)} className=' w-full h-14 rounded-[10px] font-HammersmithOne text-2xl px-5' type="text" />
             <Image onClick={handleEyeBall1} src={eyeslash} alt="eyeslash" className="absolute right-4 top-1/2 transform -translate-y-1/2 " />
           </div>
         </div>
-        <div className=' w-[595px] flex flex-col space-y-1'>
+        <div className=' w-full lg:w-[595px] flex flex-col space-y-1'>
           <div className=' font-HammersmithOne text-2xl ps-2'>Confirm Password</div>
           <div className=' relative'>
             <input onChange={(e) => setVerifiedPassword(e.target.value)} className=' w-full h-14 rounded-[10px] font-HammersmithOne text-2xl px-5' type="text" />

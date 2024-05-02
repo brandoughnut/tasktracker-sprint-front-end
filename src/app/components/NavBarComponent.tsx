@@ -6,16 +6,25 @@ import Image from 'next/image';
 import SettingsDropdownComponent from './SettingsDropdownComponent';
 import { IUserData } from '@/interfaces/interfaces';
 import { getExampleData } from '@/services/DataServices';
+import { useRouter } from 'next/navigation';
 
-const NavBarComponent = (prop: {isProfileIcon: boolean; }) => {
+const NavBarComponent = (prop: {isProfileIcon: boolean}) => {
 
   const [isSettings, setIsSettings] = useState<boolean>(false);
   const [userData, setUserData] = useState<IUserData>(getExampleData())
 
+  const router = useRouter();
+
+  const handleProfileClick = () => {
+    router.push('/pages/DashboardPage');
+  }
+
   return (
     <div className='h-[135px] w-full bg-gradient-to-r from-[#AEE6D9] to-[#3EBE9F]'>
       <div className='h-full flex mx-[36px] justify-between'>
-        <div className='flex'>
+        <div 
+        onClick={handleProfileClick}
+        className='flex cursor-pointer'>
           <div className='text-center HoltwoodOneSC my-auto'>
             <p className='text-black text-[32px] leading-none'>Maddie</p>
             <p className='text-[#0B7D61] text-[28px] leading-none'>is cool</p>

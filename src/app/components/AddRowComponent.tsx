@@ -4,7 +4,7 @@ import Image from "next/image";
 const AddRowComponent = (prop: {setIsRow: (isRow:boolean) => void}) => {
   return (
     <div>
-            <div className='w-[600px] h-[320px] rounded-[10px] border-black border-[1px] z-50 bg-white overflow-y-auto'>
+            <div className='w-full lg:w-[600px] h-[320px] rounded-[10px] border-black border-[1px] z-50 bg-white overflow-y-auto'>
                 <div>
                                 <div className=' font-HammersmithOne text-5xl text-center w-full mt-10'>Create Row</div>
             <div className='grid justify-center'>
