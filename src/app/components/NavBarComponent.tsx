@@ -4,10 +4,13 @@ import React, { useState } from 'react'
 import navbarlogo from '@/assets/navbarexclamation.png';
 import Image from 'next/image';
 import SettingsDropdownComponent from './SettingsDropdownComponent';
+import { IUserData } from '@/interfaces/interfaces';
+import { getExampleData } from '@/services/DataServices';
 
-const NavBarComponent = (prop: {isProfileIcon: boolean}) => {
+const NavBarComponent = (prop: {isProfileIcon: boolean; }) => {
 
   const [isSettings, setIsSettings] = useState<boolean>(false);
+  const [userData, setUserData] = useState<IUserData>(getExampleData())
 
   return (
     <div className='h-[135px] w-full bg-gradient-to-r from-[#AEE6D9] to-[#3EBE9F]'>
@@ -19,7 +22,7 @@ const NavBarComponent = (prop: {isProfileIcon: boolean}) => {
           </div>
         <Image className='h-[96.94px] mt-3.5' src={navbarlogo} alt='exclamation mark'/>
         </div>
-        <div onClick={() => {setIsSettings(!isSettings)}} className={prop.isProfileIcon ? 'cursor-pointer my-auto h-[66px] w-[67px] rounded-full border-black border-[1px] bg-white' : 'hidden'}></div>
+        <div onClick={() => {setIsSettings(!isSettings)}} className={prop.isProfileIcon ? 'cursor-pointer my-auto h-[66px] w-[67px] rounded-full border-black border-[1px] bg-white' : 'hidden'} style={{background: userData.userColor}}></div>
 
       </div>
       

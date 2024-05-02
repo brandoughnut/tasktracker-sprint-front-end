@@ -1,4 +1,5 @@
 import { IMember, IBoard, IUserInfo, IToken, IUserData } from "@/interfaces/interfaces";
+import UserExampleData from '@/data/UserDataExample.json'
 
 
 const url = "http://localhost:3000";
@@ -52,8 +53,12 @@ export const getLoggedInUserData = async (username: string) => {
     const res = await fetch(url + "/User/GetUserByUsername/" + username);
     const data = await res.json();
     userData = data;
-
 }
+
+export const getExampleData = () => {
+    return UserExampleData;
+}
+
 
 export const loggedinData = () => {
     return userData;

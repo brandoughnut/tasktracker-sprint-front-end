@@ -2,6 +2,7 @@
     "userID": 1,
     "username": "USERNAME",
     "joinDate": "12/31/1937",
+    "userColor": "#57CDFF",
     "boards": [
         {
             "name": "OUR BOARD",

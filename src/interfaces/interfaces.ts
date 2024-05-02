@@ -19,8 +19,16 @@ export interface IToken {
 }
 
 export interface IUserData {
-    userId: number
-    username: string
-    joinDate: string
-    boards: IBoard[]
+    userID: number;
+    username: string;
+    joinDate: string;
+    userColor: string;
+    boards: {
+        name: string;
+        code: string;
+        members: {
+            name: string;
+            color: string;
+        }[];
+    }[];
 }
