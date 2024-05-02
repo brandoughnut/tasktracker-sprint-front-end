@@ -2,7 +2,7 @@ import { IMember, IBoard, IUserInfo, IToken, IUserData } from "@/interfaces/inte
 import UserExampleData from '@/data/UserDataExample.json'
 
 
-const url = "http://localhost:3000";
+const url = "https://task-tracker-backend.azurewebsites.net";
 
 let userData: IUserData
 
