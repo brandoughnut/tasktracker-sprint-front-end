@@ -16,7 +16,7 @@ const TaskPage = () => {
       }, [])
 
   return (
-    <div>
+    <div className="relative">
       <NavBarComponent isProfileIcon={true}/>
 
 
@@ -64,13 +64,13 @@ const TaskPage = () => {
 
     <div className="mx-[10px] lg:mx-[111px] mt-[60.75px]">
         <div>
-            <TaskTypeComponent type="To-Do" color="bg-[#AEE6D9]" isShown={true}/>
+            <TaskTypeComponent type="To-Do" color="bg-[#AEE6D9]" isShown={true} setIsViewTask={setIsViewTask}/>
         </div>
         <div className="my-[43px]">
-            <TaskTypeComponent type="In Progress" color="bg-[#6FDFC4]" isShown={false}/>
+            <TaskTypeComponent type="In Progress" color="bg-[#6FDFC4]" isShown={false} setIsViewTask={setIsViewTask}/>
         </div>
         <div>
-            <TaskTypeComponent type="Completed" color="bg-[#3EBE9F]" isShown={false}/>
+            <TaskTypeComponent type="Completed" color="bg-[#3EBE9F]" isShown={false} setIsViewTask={setIsViewTask}/>
         </div>
     </div>
 
