@@ -1,0 +1,132 @@
+{
+    "name": "OUR BOARD",
+    "code": "XYZ456",
+    "members": [
+        {
+            "name": "blue",
+            "color": "#57CDFF"
+        },
+        {
+            "name": "red",
+            "color": "#FF6E6E"
+        },
+        {
+            "name": "magenta",
+            "color": "#D59FFF"
+        }
+    ],
+    "To-Do-Tasks": [
+        {
+            "name":"Login",
+            "description":"A short description of the task you are viewi...",
+            "priority": 2,
+            "assigned-to":{
+                "name": "red",
+                "color": "#FF6E6E"
+            }
+        },
+        {
+            "name":"Praise Ken",
+            "description":"A short description of the task you are viewi...",
+            "priority": 1,
+            "assigned-to":{
+                "name": "no one",
+                "color": "#C8C8C8"
+            }
+        },
+        {
+            "name":"Test Create Acc...",
+            "description":"A short description of the task you are viewi...",
+            "priority": 2,
+            "assigned-to":{
+                "name": "blue",
+                "color": "#57CDFF"
+            }
+        },
+        {
+            "name":"Set Up Profile ...",
+            "description":"A short description of the task you are viewi...",
+            "priority": 3,
+            "assigned-to":{
+                "name": "magenta",
+                "color": "#D59FFF"
+            }
+        }
+    ],
+    "In-Progress-Tasks": [
+        {
+            "name":"Login Functiona...",
+            "description":"A short description of the task you are viewi...",
+            "priority": 2,
+            "assigned-to":{
+                "name": "red",
+                "color": "#FF6E6E"
+            }
+        },
+        {
+            "name":"Create Account ...",
+            "description":"A short description of the task you are viewi...",
+            "priority": 1,
+            "assigned-to":{
+                "name": "magenta",
+                "color": "#D59FF"
+            }
+        },
+        {
+            "name":"Front End Funct...",
+            "description":"A short description of the task you are viewi...",
+            "priority": 4,
+            "assigned-to":{
+                "name": "blue",
+                "color": "#57CDFF"
+            }
+        },
+        {
+            "name":"Front End Accou...",
+            "description":"A short description of the task you are viewi...",
+            "priority": 2,
+            "assigned-to":{
+                "name": "red",
+                "color": "#FF6E6E"
+            }
+        }
+    ],
+    "Completed-Tasks": [
+        {
+            "name":"Create Backend",
+            "description":"A short description of the task you are viewi...",
+            "priority": 2,
+            "assigned-to":{
+                "name": "magenta",
+                "color": "#D59FF"
+            }
+        },
+        {
+            "name":"Add Isaiah",
+            "description":"A short description of the task you are viewi...",
+            "priority": 1,
+            "assigned-to":{
+                "name": "red",
+                "color": "#FF6E6E"
+            }
+        },
+        {
+            "name":"Discuss Style S...",
+            "description":"A short description of the task you are viewi...",
+            "priority": 4,
+            "assigned-to":{
+                "name": "no one",
+                "color": "#C8C8C8"
+            }
+        },
+        {
+            "name":"Create Frontend",
+            "description":"A short description of the task you are viewi...",
+            "priority": 2,
+            "assigned-to":{
+                "name": "blue",
+                "color": "#57CDFF"
+            }
+        }
+    ]
+}
