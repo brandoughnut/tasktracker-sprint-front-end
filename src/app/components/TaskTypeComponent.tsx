@@ -79,7 +79,7 @@ const TaskTypeComponent = (prop: {
       >
         {widgets.map((widget, idx) => {
           return (
-            <div className="me-[35px]">
+            <div key={idx} className="me-[35px]">
             <div
               onClick={() => {
                 prop.setIsViewTask(true);
