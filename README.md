@@ -1,3 +1,8 @@
+Name: Brandon, Joseph, Liam, Mark, Aidan
+Lab Name: Task tracker Sprint
+Date: 5/3/2024
+Brief Description: Was given 1 week to create a task tracker application, brandon and joseph were tasked with the front end only, and aidan and mark were the backend
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
