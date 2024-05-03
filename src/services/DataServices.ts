@@ -1,4 +1,4 @@
-import { IMember, IBoard, IUserInfo, IToken, IUserData } from "@/interfaces/interfaces";
+import { IMember, IBoard, IUserInfo, IToken, IUserData, IUserInfoLogin } from "@/interfaces/interfaces";
 import UserExampleData from '@/data/UserDataExample.json'
 import BoardDataExample from '@/data/BoardDataExample.json'
 
@@ -9,12 +9,12 @@ let userData: IUserData
 
 
 
-const createAccount = async (createdUser: IUserInfo)=> {
+export const createAccount = async (createdUser: IUserInfo)=> {
 
     //we're using this fetch to make a POST Request
     //We have to st the method to POS
     //we set the content type to application/ json to specify our json data format
-    const res = await fetch(url + '/User/AddUser', {
+    const res = await fetch(url + '/User/CreateUser', {
         method: "POST",
         headers: {
             'Content-Type' : "application/json"
@@ -32,7 +32,7 @@ const createAccount = async (createdUser: IUserInfo)=> {
     console.log(data);
 }
 
-export const login = async (loginUser: IUserInfo) => {
+export const login = async (loginUser: IUserInfoLogin) => {
     const res = await fetch(url + "/User/Login", {
         method: "POST",
         headers: {

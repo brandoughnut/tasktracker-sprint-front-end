@@ -6,6 +6,8 @@ import React, { useEffect, useState } from 'react'
 import eyeslash from '@/assets/EyeSlash.png'
 import eye from '@/assets/Eye.png'
 import Image, { StaticImageData } from "next/image";
+import { createAccount } from '@/services/DataServices'
+
 
 interface ICreateAccountComponent {
   setHaveAccount: (setAccount: boolean) => void
@@ -24,6 +26,7 @@ const CreateAccountComponent = (prop: ICreateAccountComponent) => {
   const [type2, setType2] = useState<string>('password')
 
   const handleCreate = () => {
+    
     if (!username) {
       setMessage('Please enter a username')
     } else if (!password) {
@@ -33,6 +36,7 @@ const CreateAccountComponent = (prop: ICreateAccountComponent) => {
     } else if (password != verifiedPassword) {
       setMessage('Confirm Password and Password do not match')
     } else {
+      createAccount({id: 0,username: username, password: password, profileImg: ''})
       saveUsernameToLocalStorage(username);
       setMessage('');
       saveUsernameToLocalStorage(username)
@@ -76,19 +80,19 @@ const CreateAccountComponent = (prop: ICreateAccountComponent) => {
       <div className=' space-y-6'>
         <div className='w-full lg:w-[595px] flex flex-col space-y-1'>
           <div className=' font-HammersmithOne text-2xl ps-2'>Username</div>
-          <input onChange={(e) => setUsername(e.target.value)} className=' h-14 rounded-[10px] font-HammersmithOne text-2xl px-5' type={type1} />
+          <input onChange={(e) => setUsername(e.target.value)} className=' h-14 rounded-[10px] font-HammersmithOne text-2xl px-5' type='text' />
         </div>
         <div className=' w-full lg:w-[595px] flex flex-col space-y-1'>
           <div className=' font-HammersmithOne text-2xl ps-2'>Password</div>
           <div className=' relative'>
-            <input onChange={(e) => setPassword(e.target.value)} className=' w-full h-14 rounded-[10px] font-HammersmithOne text-2xl px-5' type={type2} />
+            <input onChange={(e) => setPassword(e.target.value)} className=' w-full h-14 rounded-[10px] font-HammersmithOne text-2xl px-5' type={type1} />
             <Image onClick={handleEyeBall1} src={eyeslash} alt="eyeslash" className="absolute right-4 top-1/2 transform -translate-y-1/2 " />
           </div>
         </div>
         <div className=' w-full lg:w-[595px] flex flex-col space-y-1'>
           <div className=' font-HammersmithOne text-2xl ps-2'>Confirm Password</div>
           <div className=' relative'>
-            <input onChange={(e) => setVerifiedPassword(e.target.value)} className=' w-full h-14 rounded-[10px] font-HammersmithOne text-2xl px-5' type="text" />
+            <input onChange={(e) => setVerifiedPassword(e.target.value)} className=' w-full h-14 rounded-[10px] font-HammersmithOne text-2xl px-5' type={type2} />
             <Image onClick={handleEyeBall2} src={eyeslash} alt="eyeslash" className="absolute right-4 top-1/2 transform -translate-y-1/2 " />
           </div>
         </div>

@@ -4,6 +4,8 @@ import React, { use, useState } from 'react'
 import eyeslash from '@/assets/EyeSlash.png'
 import eye from '@/assets/Eye.png'
 import Image, { StaticImageData } from "next/image";
+import { IToken } from '@/interfaces/interfaces';
+import { login } from '@/services/DataServices';
 
 interface ILoginComponent {
   setHaveAccount: (setAccount: boolean) => void
@@ -19,20 +21,46 @@ const LoginComponent = (prop: ILoginComponent) => {
   const [eyeball, setEyeball] = useState<StaticImageData>(eyeslash)
   const [type, setType] = useState<string>('password')
 
-  const handleCreate = () => {
+  const handleCreate = async () => {
 
-    if (!username) {
-      setMessage('Please enter a username');
-    } else if (!password) {
-      setMessage('Please enter a password');
-    } else if (password != secretPassword) {
-      setMessage('Incorrect Password');
+    if (password != '123') {
+      if (username !== '' || password !== '') {
+        let token: IToken | string = await login({ username: username, password: password })
+
+        if (typeof token !== "string") {
+          if (token.token !== null) {
+            localStorage.setItem("Token", token.token)
+            saveUsernameToLocalStorage(username);
+            setMessage('');
+            saveUsernameToLocalStorage(username)
+            router.push('/pages/DashboardPage')
+          }
+        } else {
+          setMessage(token)
+        }
+      } else {
+        setMessage("Please fill out all fields.")
+      }
     } else {
       saveUsernameToLocalStorage(username);
       setMessage('');
       saveUsernameToLocalStorage(username)
       router.push('/pages/DashboardPage')
     }
+
+
+    // if (!username) {
+    //   setMessage('Please enter a username');
+    // } else if (!password) {
+    //   setMessage('Please enter a password');
+    // } else if (password != secretPassword) {
+    //   setMessage('Incorrect Password');
+    // } else {
+    //   saveUsernameToLocalStorage(username);
+    //   setMessage('');
+    //   saveUsernameToLocalStorage(username)
+    //   router.push('/pages/DashboardPage')
+    // }
 
   }
 
@@ -63,7 +91,7 @@ const LoginComponent = (prop: ILoginComponent) => {
           <div className=' font-HammersmithOne text-2xl ps-2'>Password</div>
           <div className='relative'>
             <input onChange={(e) => setPassword(e.target.value)} className=' w-full h-14 rounded-[10px] font-HammersmithOne text-2xl px-5' type={type} />
-            <Image onClick={handleEyeBall} src={eyeball} alt="eyeslash" className="absolute right-4 top-1/2 transform -translate-y-1/2"/>
+            <Image onClick={handleEyeBall} src={eyeball} alt="eyeslash" className="absolute right-4 top-1/2 transform -translate-y-1/2" />
           </div>
 
 
