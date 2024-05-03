@@ -9,6 +9,7 @@ import Image from 'next/image';
 import BoardCardComponent from './BoardCardComponent';
 import { IUserData } from '@/interfaces/interfaces';
 import { getExampleData } from '@/services/DataServices';
+import { getUsernameFromLocalStorage } from '@/utils/LocalSotrage';
 
 interface IMyBoardComponent {
     setIsAddBoard: (isBoardAdded: boolean) => void
@@ -22,6 +23,8 @@ const MyBoardsComponent = (props: IMyBoardComponent) => {
 
     const [isTag1, setIsTag1] = useState<boolean>(false);
     const [isTag2, setIsTag2] = useState<boolean>(false);
+
+    const [username, setUsername] = useState<string>(getUsernameFromLocalStorage())
 
     return (
         <div className='2xl:flex 2xl:justify-between 2xl:ms-[144px] 2xl:me-[47px]'>
@@ -57,7 +60,7 @@ const MyBoardsComponent = (props: IMyBoardComponent) => {
                     <h1 className='HammersmithOne text-[20px] w-full absolute top-[48.5%] text-center text-white'>Profile Picture</h1>
                 </div>
             </div> */}
-                <h1 className='HammersmithOne text-center text-[64px]'>{userData.username}</h1>
+                <h1 className='HammersmithOne text-center text-[64px]'>{username}</h1>
                 <h1 className='HammersmithOne text-center text-[40px]'>Joined {userData.joinDate}</h1>
             </div>
             <div className='mt-[53px]'>
