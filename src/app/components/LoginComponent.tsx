@@ -28,6 +28,7 @@ const LoginComponent = (prop: ILoginComponent) => {
     } else if (password != secretPassword) {
       setMessage('Incorrect Password');
     } else {
+      saveUsernameToLocalStorage(username);
       setMessage('');
       saveUsernameToLocalStorage(username)
       router.push('/pages/DashboardPage')

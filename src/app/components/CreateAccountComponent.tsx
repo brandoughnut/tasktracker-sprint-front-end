@@ -33,6 +33,7 @@ const CreateAccountComponent = (prop: ICreateAccountComponent) => {
     } else if (password != verifiedPassword) {
       setMessage('Confirm Password and Password do not match')
     } else {
+      saveUsernameToLocalStorage(username);
       setMessage('');
       saveUsernameToLocalStorage(username)
       router.push('/pages/DashboardPage')
@@ -75,12 +76,12 @@ const CreateAccountComponent = (prop: ICreateAccountComponent) => {
       <div className=' space-y-6'>
         <div className='w-full lg:w-[595px] flex flex-col space-y-1'>
           <div className=' font-HammersmithOne text-2xl ps-2'>Username</div>
-          <input onChange={(e) => setUsername(e.target.value)} className=' h-14 rounded-[10px] font-HammersmithOne text-2xl px-5' type="text" />
+          <input onChange={(e) => setUsername(e.target.value)} className=' h-14 rounded-[10px] font-HammersmithOne text-2xl px-5' type={type1} />
         </div>
         <div className=' w-full lg:w-[595px] flex flex-col space-y-1'>
           <div className=' font-HammersmithOne text-2xl ps-2'>Password</div>
           <div className=' relative'>
-            <input onChange={(e) => setPassword(e.target.value)} className=' w-full h-14 rounded-[10px] font-HammersmithOne text-2xl px-5' type="text" />
+            <input onChange={(e) => setPassword(e.target.value)} className=' w-full h-14 rounded-[10px] font-HammersmithOne text-2xl px-5' type={type2} />
             <Image onClick={handleEyeBall1} src={eyeslash} alt="eyeslash" className="absolute right-4 top-1/2 transform -translate-y-1/2 " />
           </div>
         </div>
