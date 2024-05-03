@@ -10,6 +10,13 @@ export interface IBoard {
 }
 
 export interface IUserInfo{
+    id: number
+    username: string
+    password: string
+    profileImg: string
+}
+
+export interface IUserInfoLogin{
     username: string
     password: string
 }
